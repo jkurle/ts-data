@@ -5,7 +5,8 @@ econometrics course. The files are derived from the sources documented below.
 
 The data have been downloaded, filtered, reformatted, and saved as `.rds`
 files by the course author. The transformations include selecting Germany and
-the relevant variables, removing missing observations, and converting the
+the relevant variables (for GDP, two units and seasonal adjustments), removing
+missing observations, and converting the
 DWD temperature file into a two-column time-series dataset. These files are
 not the original source files and should be cited together with their original
 sources.
@@ -15,18 +16,22 @@ sources.
 ### German GDP
 
 Source dataset: Eurostat, `namq_10_gdp`, *GDP and main components (output,
-expenditure and income)*, accessed 16 September 2026:
+expenditure and income)*:
 
 <https://ec.europa.eu/eurostat/databrowser/view/namq_10_gdp/>
 
-The retrieved series is Germany (`DE`), gross domestic product (`B1GQ`),
-current prices in million euro (`CP_MEUR`), seasonally and calendar
-unadjusted (`NSA`).
+Two series are retrieved for Germany (`DE`), gross domestic product (`B1GQ`):
+
+- `gdp.rds` (accessed 16 September 2026): current prices in million euro
+  (`CP_MEUR`), seasonally and calendar unadjusted (`NSA`).
+- `gdp_clv.rds` (accessed 31 October 2026): chain-linked volumes, reference
+  year 2010, in million euro (`CLV10_MEUR`), seasonally and calendar adjusted
+  (`SCA`). This is real GDP, i.e. adjusted for price changes.
 
 Eurostat authorises reuse of its statistical data for commercial and
 non-commercial purposes provided that the source is acknowledged. Eurostat’s
 reuse policy also requires modifications to the data to be stated clearly.
-This curated file is therefore redistributed under the applicable Eurostat /
+These curated files are therefore redistributed under the applicable Eurostat /
 European Commission reuse policy, with the transformations described above.
 
 ### Harmonised consumer prices
