@@ -30,6 +30,19 @@ gdp_clv <- get_eurostat(
   rename(gdp_clv = values) |> 
   drop_na()
 
+cons_clv <- get_eurostat(
+  id = "namq_10_gdp",
+  filters = list(
+    unit = "CLV10_MEUR",
+    geo = "DE",
+    na_item = "P31_S14_S15",
+    s_adj = "SCA"
+  )
+) |> 
+  select(time, values) |> 
+  rename(cons_clv = values) |> 
+  drop_na()
+
 # download hicp
 hicp <- get_eurostat(
   id = "prc_hicp_minr",
@@ -60,6 +73,7 @@ temp <- read_delim(
 # save data
 saveRDS(gdp, file = "./data/gdp.rds")
 saveRDS(gdp_clv, file = "./data/gdp_clv.rds")
+saveRDS(cons_clv, file = "./data/cons_clv.rds")
 saveRDS(hicp, file = "./data/hicp.rds")
 saveRDS(temp, file = "./data/temp.rds")
 

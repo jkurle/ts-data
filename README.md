@@ -13,20 +13,26 @@ sources.
 
 ## Sources and reuse conditions
 
-### German GDP
+### German GDP and consumption
 
 Source dataset: Eurostat, `namq_10_gdp`, *GDP and main components (output,
 expenditure and income)*:
 
 <https://ec.europa.eu/eurostat/databrowser/view/namq_10_gdp/>
 
-Two series are retrieved for Germany (`DE`), gross domestic product (`B1GQ`):
+Three series are retrieved for Germany (`DE`):
 
-- `gdp.rds` (accessed 16 September 2026): current prices in million euro
-  (`CP_MEUR`), seasonally and calendar unadjusted (`NSA`).
-- `gdp_clv.rds` (accessed 31 October 2026): chain-linked volumes, reference
-  year 2010, in million euro (`CLV10_MEUR`), seasonally and calendar adjusted
-  (`SCA`). This is real GDP, i.e. adjusted for price changes.
+- `gdp.rds` (accessed 16 September 2026): gross domestic product (`B1GQ`),
+  current prices in million euro (`CP_MEUR`), seasonally and calendar
+  unadjusted (`NSA`).
+- `gdp_clv.rds` (accessed 31 October 2026): gross domestic product (`B1GQ`),
+  chain-linked volumes, reference year 2010, in million euro (`CLV10_MEUR`),
+  seasonally and calendar adjusted (`SCA`). This is real GDP, i.e. adjusted
+  for price changes.
+- `cons_clv.rds` (accessed 1 November 2026): final consumption expenditure of
+  households and non-profit institutions serving households (`P31_S14_S15`),
+  chain-linked volumes, reference year 2010, in million euro (`CLV10_MEUR`),
+  seasonally and calendar adjusted (`SCA`). This is real private consumption.
 
 Eurostat authorises reuse of its statistical data for commercial and
 non-commercial purposes provided that the source is acknowledged. Eurostat’s
